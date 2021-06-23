@@ -8,6 +8,7 @@ pipeline {
         steps{  
             script {
                         sh 'python3 main.py'
+                        echo "Develop Branch"
             }
             }
         }
