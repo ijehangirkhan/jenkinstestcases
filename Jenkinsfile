@@ -1,3 +1,4 @@
+@Library("PythonLibrary") _
 pipeline {
     agent any
     stages {
@@ -12,6 +13,22 @@ pipeline {
         }
       
       
+    }
+    
+    post {
+        success {
+            script {
+                if ( env.BRANCH_NAME == 'master')
+                slackSuccess()
+            }
+           
+        }
+        failure {
+            script {
+                if ( env.BRANCH_NAME == 'master')
+                slackFailure()
+            }
+        }
     }
 
 }
