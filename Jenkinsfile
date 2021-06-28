@@ -1,4 +1,5 @@
 @Library("PythonLibrary") _
+def branch = ${BRANCH_NAME}
 pipeline {
     agent any
     stages {
@@ -8,7 +9,7 @@ pipeline {
         steps{  
             script {
                         sh 'python3 main.py'
-                sh "echo $BRANCH_NAME "
+                sh "echo ${env.BRANCH_NAME}"
             }
             }
         }
