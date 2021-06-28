@@ -8,7 +8,7 @@ pipeline {
         steps{  
             script {
                         sh 'python3 main.py'
-                sh "echo env.BRANCH_NAME"
+                sh "echo $BRANCH_NAME "
             }
             }
         }
