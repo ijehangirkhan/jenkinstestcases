@@ -8,7 +8,7 @@ pipeline {
         steps{  
             script {
                         sh 'python3 main.py'
-                sh "echo ${env.BRANCH_NAME}"
+               // sh "echo ${env.BRANCH_NAME}"
             }
             }
         }
@@ -19,14 +19,14 @@ pipeline {
     post {
         success {
             script {
-                if ( env.BRANCH_NAME == 'master')
+                if ( params.BRANCH == 'master')
                 slackSuccess()
             }
            
         }
         failure {
             script {
-                if ( env.BRANCH_NAME == 'master')
+                if ( params.BRANCH == 'master')
                 slackFailure()
             }
         }
