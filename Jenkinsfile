@@ -1,6 +1,6 @@
 @Library("PythonLibrary") _
 pipeline {
-    agent { label 'slave2' }
+    agent { label 'slave1' }
     stages {
     
         // Run Python File
