@@ -3,6 +3,15 @@ pipeline {
     agent { label 'slave1' }
     stages {
     
+        // Install Python
+        stage('Install Python') {
+        steps{  
+            script {
+                        sh 'sudo apt install python -y'
+            }
+            }
+        }
+        
         // Run Python File
         stage('Run Python File') {
         steps{  
