@@ -7,7 +7,7 @@ pipeline {
         stage('Install Python') {
         steps{  
             script {
-                        sh 'sudo apt install python -y'
+                        sh 'apt install python -y'
             }
             }
         }
